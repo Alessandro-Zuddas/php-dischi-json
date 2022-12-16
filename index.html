@@ -8,7 +8,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <!-- /VUE CDN -->
         <!-- Axios CDN -->
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <!-- /Axios CDN -->
         <!-- Mine style -->
         <link rel="stylesheet" href="style.css">
@@ -27,16 +27,17 @@
 
             <main>
                 <div class="cards-container">
-                    <div class="album-card">
-                        <img class="album-img" src="https://via.placeholder.com/150" alt=""> 
-                        <h3 class="album-title">Titolo album</h3>
-                        <strong class="album-artist">Artist</strong>
-                        <small class="album-date">Date</small>
+                    <div class="album-card" v-for="album in this.albums">
+                        <img class="album-img" :src="album.poster" alt=""> 
+                        <h3 class="album-title">{{ album.title }}</h3>
+                        <strong class="album-artist">{{ album.author }}</strong>
+                        <small class="album-date">{{ album.year }}</small>
                     </div>
                 </div>
             </main>
 
         </div>
 
+        <script src="main.js"></script>
     </body>
 </html>
